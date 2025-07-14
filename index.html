@@ -19,10 +19,11 @@
   <label>職員室</label>
   <select id="room">
     <option value="">選択してください</option>
-    <option value="職員室A">職員室A</option>
-    <option value="職員室B">職員室B</option>
-    <option value="職員室C">職員室C</option>
-    <option value="職員室D">職員室D</option>
+    <option value="職員室A">職員室</option>
+    <option value="職員室B">生徒指導室</option>
+    <option value="職員室C">商業センター</option>
+    <option value="職員室D">進路指導室</option>
+    <option value="職員室D">図書資料室</option>
   </select>
 
   <label>商品名</label>
@@ -41,7 +42,7 @@
   <button id="orderButton">注文する</button>
 
   <script>
-    const sheetUrl = "【あなたのApps Script WebApp URL】";
+    const sheetUrl = "https://kidanimiku.github.io/liff-order-form/";
 
     async function sendOrder(profileName) {
       const room = document.getElementById('room').value;
@@ -81,7 +82,7 @@
 
     document.getElementById('orderButton').addEventListener('click', async () => {
       try {
-        await liff.init({ liffId: "【あなたのLIFF ID】" });
+        await liff.init({ liffId: "2007745119-jb47pV9g" });
         const profile = await liff.getProfile();
         sendOrder(profile.displayName);
       } catch (err) {
